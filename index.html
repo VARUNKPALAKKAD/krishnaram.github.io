@@ -66,6 +66,12 @@
     }
     nav a:hover { color: var(--accent); }
 
+    /* Global responsive media */
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+
     .content-card {
       background: var(--gradient);
       border-radius: 24px;
@@ -305,7 +311,7 @@
       line-height: 1.4;
     }
 
-    section { padding: 0 40px; }
+    section { padding: 0 40px; scroll-margin-top: 90px; }
     footer {
       background: var(--primary);
       color: white;
@@ -328,7 +334,8 @@
       .card-label { font-size: 2rem; }
       .content-card { padding: 40px 25px; }
       nav ul { gap: 20px; flex-wrap: wrap; justify-content: center; }
-      .hero-blocks, .flow-steps, .mold-layout { flex-direction: column; }
+      .hero-blocks, .flow-steps { flex-direction: column; }
+      .mold-layout { grid-template-columns: 1fr; gap: 20px; }
       .flow-steps::before { display: none; }
       .industry-grid, .injection-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
       .tooling-grid { grid-template-columns: 1fr; }
