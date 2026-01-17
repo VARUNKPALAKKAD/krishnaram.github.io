@@ -16,12 +16,19 @@
       --card-bg: rgba(255,255,255,0.07);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
+    html {
+      overflow-x: hidden;
+      width: 100%;
+    }
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
       background: var(--light);
       color: white;
       line-height: 1.6;
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
     }
     header {
       position: fixed;
@@ -68,6 +75,7 @@
       overflow: hidden;
       margin: 10px auto;
       max-width: 1400px;
+      width: 100%;
     }
     .content-card::before {
       content: "";
@@ -330,34 +338,55 @@
 
     /* Small Mobile Responsive */
     @media (max-width: 600px) {
+      body, html { max-width: 100vw; overflow-x: hidden; }
+      
       .card-title { font-size: 1.8rem; line-height: 1.2; }
       .card-label { font-size: 1.5rem; padding-left: 12px; border-left: 4px solid var(--accent); }
       .card-subtitle { font-size: 1rem; }
       .alliance-brand { font-size: 1.2rem; }
-      .content-card { padding: 30px 20px; }
-      .header-container { padding: 12px 15px; }
+      .content-card { padding: 30px 20px; max-width: 100%; margin: 10px 0; border-radius: 16px; }
+      .header-container { padding: 12px 15px; width: 100%; max-width: 100vw; }
       .logo { font-size: 1.5rem; }
       nav ul { gap: 15px; font-size: 0.85rem; }
       nav a { font-size: 0.85rem; }
-      section { padding: 0 15px; }
+      section { padding: 0 10px; max-width: 100vw; overflow-x: hidden; }
       
       .industry-grid, .injection-grid, .tooling-grid { 
         grid-template-columns: 1fr; 
         gap: 15px;
+        width: 100%;
       }
-      .hero-blocks { gap: 15px; margin: 40px 0; }
-      .hero-block { padding: 20px 30px; min-width: auto; width: 100%; font-size: 0.85rem; }
-      .industry-pills { gap: 12px; }
+      .hero-blocks { gap: 15px; margin: 40px 0; width: 100%; }
+      .hero-block { padding: 20px 30px; min-width: auto; width: 100%; font-size: 0.85rem; box-sizing: border-box; }
+      .industry-pills { gap: 12px; width: 100%; }
       .pill { padding: 10px 20px; font-size: 0.75rem; }
       
       .industry-icon, .tooling-icon, .injection-icon { font-size: 3rem; margin-bottom: 15px; }
-      .industry-card, .tooling-card, .injection-card { padding: 15px; font-size: 0.85rem; }
+      .industry-card, .tooling-card, .injection-card { padding: 15px; font-size: 0.85rem; width: 100%; box-sizing: border-box; }
       
-      .card-header { flex-direction: column; align-items: flex-start; gap: 15px; margin-bottom: 30px; }
+      .card-header { flex-direction: column; align-items: flex-start; gap: 15px; margin-bottom: 30px; width: 100%; }
       .alliance-brand { align-self: flex-start; }
       
-      .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      table { min-width: 600px; font-size: 0.8rem; }
+      .table-container { 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        display: block;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent) rgba(255,255,255,0.1);
+      }
+      .table-container::-webkit-scrollbar {
+        height: 8px;
+      }
+      .table-container::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+      }
+      .table-container::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 4px;
+      }
+      table { min-width: 600px; font-size: 0.8rem; width: 100%; }
       
       footer { padding: 60px 20px 40px; }
       
