@@ -305,12 +305,70 @@
       padding: 90px 40px 50px;
     }
 
+    /* Tablet Responsive */
+    @media (max-width: 1024px) {
+      .industry-grid, .injection-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .tooling-grid { grid-template-columns: repeat(2, 1fr); }
+      .content-card { padding: 50px 35px; }
+      .header-container { padding: 16px 30px; }
+      section { padding: 0 30px; }
+    }
+
+    /* Mobile Responsive */
     @media (max-width: 900px) {
-      .card-title { font-size: 2.6rem; }
-      .content-card { padding: 50px 30px; }
-      nav ul { gap: 25px; flex-wrap: wrap; justify-content: center; }
+      .card-title { font-size: 2.2rem; }
+      .card-label { font-size: 2rem; }
+      .content-card { padding: 40px 25px; }
+      nav ul { gap: 20px; flex-wrap: wrap; justify-content: center; }
       .hero-blocks, .flow-steps, .mold-layout { flex-direction: column; }
       .flow-steps::before { display: none; }
+      .industry-grid, .injection-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .tooling-grid { grid-template-columns: 1fr; }
+      .header-container { flex-direction: column; gap: 15px; padding: 15px 20px; }
+      section { padding: 0 20px; }
+    }
+
+    /* Small Mobile Responsive */
+    @media (max-width: 600px) {
+      .card-title { font-size: 1.8rem; line-height: 1.2; }
+      .card-label { font-size: 1.5rem; padding-left: 12px; border-left: 4px solid var(--accent); }
+      .card-subtitle { font-size: 1rem; }
+      .alliance-brand { font-size: 1.2rem; }
+      .content-card { padding: 30px 20px; }
+      .header-container { padding: 12px 15px; }
+      .logo { font-size: 1.5rem; }
+      nav ul { gap: 15px; font-size: 0.85rem; }
+      nav a { font-size: 0.85rem; }
+      section { padding: 0 15px; }
+      
+      .industry-grid, .injection-grid, .tooling-grid { 
+        grid-template-columns: 1fr; 
+        gap: 15px;
+      }
+      .hero-blocks { gap: 15px; margin: 40px 0; }
+      .hero-block { padding: 20px 30px; min-width: auto; width: 100%; font-size: 0.85rem; }
+      .industry-pills { gap: 12px; }
+      .pill { padding: 10px 20px; font-size: 0.75rem; }
+      
+      .industry-icon, .tooling-icon, .injection-icon { font-size: 3rem; margin-bottom: 15px; }
+      .industry-card, .tooling-card, .injection-card { padding: 15px; font-size: 0.85rem; }
+      
+      .card-header { flex-direction: column; align-items: flex-start; gap: 15px; margin-bottom: 30px; }
+      .alliance-brand { align-self: flex-start; }
+      
+      .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      table { min-width: 600px; font-size: 0.8rem; }
+      
+      footer { padding: 60px 20px 40px; }
+      
+      img[style*="position: absolute"] { 
+        position: relative !important; 
+        right: auto !important; 
+        top: auto !important; 
+        margin: 0 auto 20px;
+        display: block;
+        width: 120px !important;
+      }
     }
   </style>
 </head>
