@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alliance Engineering Service Solutions | 2026</title>
+  <meta name="description" content="Simulation-driven engineering excellence for faster launches, lower costs, and superior quality." />
+  <style>
+    :root {
+      --primary: #001f3f;
+      --accent: #007bff;
+      --light: #f0f8ff;
+      --dark: #000d1f;
+      --gradient: linear-gradient(135deg, #001f3f, #002b5b);
+      --shadow: rgba(0,0,0,0.5);
+      --card-bg: rgba(255,255,255,0.07);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--light);
+      color: white;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--primary);
+      z-index: 1000;
+      box-shadow: 0 4px 20px var(--shadow);
+      transition: background 0.4s;
+    }
+    header.scrolled { background: rgba(0,31,63,0.98); backdrop-filter: blur(12px); }
+    .header-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .content-card {
+      background: var(--gradient);
+      border-radius: 24px;
+      padding: 60px 50px;
+      box-shadow: 0 20px 60px var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin: 10px auto;
+      max-width: 1400px;
+    }
+    .content-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(0,123,255,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+    .card-label {
+      font-size: 2.5rem;
+      font-weight: 600;
+      border-left: 6px solid var(--accent);
+      padding-left: 18px;
+    }
+    .alliance-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+      opacity: 0.85;
+    }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .card-subtitle {
+      font-size: 1.4rem;
+      opacity: 0.9;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+
+    .hero-blocks {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 60px 0;
+    }
+    .hero-block {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 30px 50px;
+      min-width: 280px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .industry-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .pill {
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .industry-grid, .injection-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .tooling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .industry-card, .tooling-card, .injection-card {
+      background: white;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.4s ease;
+      font-size: 0.9rem;
+      color: black;
+    }
+    .industry-card:hover, .tooling-card:hover, .injection-card:hover {
+      transform: translateY(-12px);
+      background: rgba(255,255,255,0.14);
+      box-shadow: 0 25px 60px rgba(0,123,255,0.25);
+    }
+    .industry-icon, .tooling-icon, .injection-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    .process-flow-container {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .flow-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 50px 0;
+      position: relative;
+    }
+    .flow-steps::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent);
+      opacity: 0.3;
+      z-index: -1;
+    }
+    .flow-step {
+      flex: 1;
+      min-width: 240px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 30px;
+      transition: all 0.4s ease;
+    }
+    .flow-step:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.14);
+    }
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+    .step-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .flow-description {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .mold-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .mold-left {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 80px;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .table-container th, .table-container td {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 15px;
+      text-align: left;
+    }
+    .table-container th {
+      background: var(--primary);
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .table-container td {
+      background: rgba(255,255,255,0.08);
+      color: white;
+    }
+    .table-container tr:nth-child(even) td {
+      background: rgba(255,255,255,0.05);
+    }
+    .table-container tr:hover td {
+      background: rgba(255,255,255,0.12);
+    }
+    .check-list {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    section { padding: 0 40px; }
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 90px 40px 50px;
+    }
+
+    @media (max-width: 900px) {
+      .card-title { font-size: 2.6rem; }
+      .content-card { padding: 50px 30px; }
+      nav ul { gap: 25px; flex-wrap: wrap; justify-content: center; }
+      .hero-blocks, .flow-steps, .mold-layout { flex-direction: column; }
+      .flow-steps::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="navbar">
+  <div class="header-container">
+    <div class="logo">ALLIANCE</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tooling">Tooling</a></li>
+        <li><a href="#stamping">Stamping</a></li>
+        <li><a href="#formability">Formability</a></li>
+        <li><a href="#mold">Mold</a></li>
+        <li><a href="#injection">Injection Mold</a></li>
+        <li><a href="#mold-flow">Mold Flow</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- 1. Home / Hero -->
+<section id="home">
+  <div class="content-card" style="margin-top:0; padding-top:100px; text-align:center;">
+    <img src="./images/logo.png" alt="Alliance Engineering Logo" style="position: absolute; right: 50px; top: 85px; width: 150px; height: auto;">
+
+    <div class="card-header" style="justify-content:center; margin-bottom:30px;">
+      <div class="card-label">ENGINEERING SERVICE SOLUTIONS</div>
+    </div>
+
+    <h1 class="card-title">
+      SIMULATION-DRIVEN<br>ENGINEERING EXCELLENCE
+    </h1>
+
+    <p class="card-subtitle">
+      Accelerating product development with advanced CAD, CAE, and Simulation technologies<br>
+      for faster launches, lower costs, and higher quality.
+    </p>
+
+    <div class="hero-blocks">
+      <div class="hero-block"><strong>CAD/CAE</strong><br>Design & Analysis</div>
+      <div class="hero-block"><strong>CFD/FEA</strong><br>Advanced Simulation</div>
+      <div class="hero-block"><strong>Tooling Design Services</strong><br>Manufacturing Solutions</div>
+      <div class="hero-block"><strong>Quality Defect Prediction</strong><br>Advanced Analysis</div>
+    </div>
+
+    <div style="margin:80px 0 40px; font-size:1.6rem; font-weight:600;">
+      SERVING CRITICAL INDUSTRIES
+    </div>
+
+    <div class="industry-pills">
+      <div class="pill"><span>🚗</span> Automotive</div>
+      <div class="pill"><span>⚡</span> Energy</div>
+      <div class="pill"><span>🧬</span> Life Sciences</div>
+      <div class="pill"><span>🚆</span> Rail</div>
+      <div class="pill"><span>⚙️</span> Heavy Engineering</div>
+      <div class="pill"><span>🚛</span> Tooling Design Services</div>
+      <div class="pill"><span>✅</span> Quality Defect Prediction</div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 2. Core Industries & Expertise -->
+<section id="industries">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Core Industries & Expertise</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Serving Critical Industrial Sectors with Deep Engineering Expertise</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">ALLIANCE</div>
+    </div>
+
+    <div class="industry-grid">
+      <div class="industry-card" style="border-top: 5px solid #007bff;">
+        <div class="industry-icon">🚗</div>       
+        <h3 class="industry-name">Automotive & Industrial Vehicles</h3>
+        <p class="industry-desc">Comprehensive solutions for passenger cars, EVs, trucks, and off-highway vehicles — safety, lightweighting & performance optimization.</p>                                                            
+      </div>
+
+      <div class="industry-card" style="border-top: 5px solid #ff6b00;">
+        <div class="industry-icon">⚡</div>        
+        <h3 class="industry-name">Energy</h3>
+        <p class="industry-desc">Advanced engineering for power generation equipment, renewable energy systems, and critical infrastructure requiring high reliability.</p>                                                              
+      </div>
+
+      <div class="industry-card" style="border-top: 5px solid #00c853;">
+        <div class="industry-icon">🧬</div>       
+        <h3 class="industry-name">Life Sciences</h3>
+        <p class="industry-desc">Precision engineering for medical devices, diagnostic equipment, and pharmaceutical machinery with focus on strict regulatory compliance.</p>                                                           
+      </div>
+
+      <div class="industry-card" style="border-top: 5px solid #9c27b0;">
+        <div class="industry-icon">🚆</div>       
+        <h3 class="industry-name">Rail</h3>
+        <p class="industry-desc">Structural integrity and dynamic analysis for rolling stock, bogies, and track infrastructure to ensure passenger safety and operational efficiency.</p>                                                
+      </div>
+
+      <div class="industry-card" style="border-top: 5px solid #455a64;">
+        <div class="industry-icon">⚙️</div>      
+        <h3 class="industry-name">Heavy Engineering & Machinery</h3>
+        <p class="industry-desc">Robust design and simulation for construction equipment, mining machinery, and industrial plants operating in harsh environments.</p>                                                                   
+      </div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 3. Comprehensive Service Portfolio -->
+<section id="services">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Comprehensive Service Portfolio</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">End-to-End Engineering Solutions: From Concept Design to Advanced Simulation</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Core Competencies</div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>DOMAIN</th>
+            <th>DESIGN (CAD)</th>
+            <th>ANALYSIS (CAE)</th>
+            <th>SIMULATION FOCUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="domain-icon">🔩</span> Sheet Metal</td>
+            <td>Part Design<br>Stamping Die Design</td>
+            <td>Formability Simulation</td>
+            <td class="check-list">✅ Predict defects (cracking, wrinkling)<br>✅ Optimize Blank Nesting & Layout</td>
+          </tr>
+          <tr>
+            <td><span class="domain-icon">🧱</span> Mold</td>
+            <td>Mold Design (Injection)<br>Prototype Mold Design</td>
+            <td>Mold Flow Simulation</td>
+            <td class="check-list">✅ Predict fill, pack, cool, & warpage<br>✅ Optimize gate locations & cooling</td>
+          </tr>
+          <tr>
+            <td><span class="domain-icon">🔥</span> Casting</td>
+            <td>Casting Design<br>Die Casting Design</td>
+            <td>Metal Casting Simulation</td>
+            <td class="check-list">✅ Optimize molten metal flow<br>✅ Solidification & defect prediction</td>
+          </tr>
+          <tr>
+            <td><span class="domain-icon">🗺️</span> Structural / Fluid</td>
+            <td>Component Design<br>System Design</td>
+            <td>Structural Analysis (FEA)<br>CFD Analysis</td>
+            <td class="check-list">✅ Ensure safety, reliability, durability<br>✅ Optimize fluid & thermal performance</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 4. Tooling Design Services -->
+<section id="tooling">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Tooling Design Services</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">End-to-End Tooling Design for Production Readiness</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Manufacturing Solutions</div>
+    </div>
+
+    <div class="tooling-grid">
+      <div class="tooling-card" style="background: white; color: black;">
+        <div class="tooling-icon">🔩</div>
+        <h3 class="tooling-title" style="color: black; font-size: 1.2rem; margin-bottom: 8px;">Stamping Die Design</h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 20px;">Sheet Metal Formation</p>
+        <p style="color: #007bff; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px;">DELIVERABLES</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 20px; text-align: left;">
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Full 3D CAD Design & 2D Detailing</li>
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Simulation & Feasibility Reports</li>
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Blank Development & Strip Layouts</li>
+        </ul>
+        <div style="background: #f0f4f8; border-left: 4px solid #007bff; padding: 15px; border-radius: 4px; text-align: left;">
+          <p style="color: #333; font-weight: 700; font-size: 0.8rem; margin-bottom: 5px;">Key Impact</p>
+          <p style="color: #666; font-size: 0.8rem; line-height: 1.4; font-style: italic;">Production-ready dies on the first try, ensuring high first-time quality and rapid turnaround times.</p>
+        </div>
+      </div>
+
+      <div class="tooling-card" style="background: white; color: black;">
+        <div class="tooling-icon">🧱</div>
+        <h3 class="tooling-title" style="color: black; font-size: 1.2rem; margin-bottom: 8px;">Plastic Injection Mould</h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 20px;">Polymer Manufacturing</p>
+        <p style="color: #007bff; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px;">DELIVERABLES</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 20px; text-align: left;">
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Complete 3D/2D Design & BOM</li>
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Cooling & Ejection Layouts</li>
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Mold Flow Simulation Reports</li>
+        </ul>
+        <div style="background: #f0f4f8; border-left: 4px solid #007bff; padding: 15px; border-radius: 4px; text-align: left;">
+          <p style="color: #333; font-weight: 700; font-size: 0.8rem; margin-bottom: 5px;">Key Impact</p>
+          <p style="color: #666; font-size: 0.8rem; line-height: 1.4; font-style: italic;">Covers prototype, multi-cavity, hot-runner, and high-precision moulds for consistent part quality.</p>
+        </div>
+      </div>
+
+      <div class="tooling-card" style="background: white; color: black;">
+        <div class="tooling-icon">🔥</div>
+        <h3 class="tooling-title" style="color: black; font-size: 1.2rem; margin-bottom: 8px;">Die Casting Design</h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 20px;">Metal Casting Process</p>
+        <p style="color: #007bff; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px;">DELIVERABLES</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 20px; text-align: left;">
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Final Die Design 3D Drawings</li>
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Gating & Runner Layouts</li>
+          <li style="color: #333; font-size: 0.85rem; margin: 8px 0;">✓ Solidification Simulation Reports</li>
+        </ul>
+        <div style="background: #f0f4f8; border-left: 4px solid #007bff; padding: 15px; border-radius: 4px; text-align: left;">
+          <p style="color: #333; font-weight: 700; font-size: 0.8rem; margin-bottom: 5px;">Key Impact</p>
+          <p style="color: #666; font-size: 0.8rem; line-height: 1.4; font-style: italic;">Achieves better dimensional stability, minimized defects, and significantly longer die life.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 5. Stamping Die Design & Formability Simulation - Deep Dive -->
+<section id="stamping">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Stamping Die Design & Formability Simulation</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Virtual Stamping: Eliminating Defects Before Tooling Manufacture</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Deep Dive</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 30px;">
+        <h3 style="font-size: 1.3rem; color: black; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.8rem;">🔍</span> Virtual Prototyping Methodology
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 15px 0; color: #333; line-height: 1.5;">
+            <span style="color: #007bff; font-weight: bold;">▸</span> <strong style="color: #333;">Predictive Modeling:</strong> Digitally reproduces real stamping process to predict metal sheet behavior (drawing, bending) before physical dies are cut.
+          </li>
+          <li style="margin: 15px 0; color: #333; line-height: 1.5;">
+            <span style="color: #007bff; font-weight: bold;">▸</span> <strong style="color: #333;">Strategic Planning:</strong> Deep component study determines optimal number of tool stages and suggests precise process tools.
+          </li>
+          <li style="margin: 15px 0; color: #333; line-height: 1.5;">
+            <span style="color: #007bff; font-weight: bold;">▸</span> <strong style="color: #333;">Fool-Proof Strategy:</strong> Creates a validated simulation strategy to eliminate trial-and-error loops in manufacturing.
+          </li>
+        </ul>
+
+        <h3 style="font-size: 1.3rem; color: black; margin: 30px 0 20px 0; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.8rem;">💎</span> Optimization & Business Impact
+        </h3>
+        <div style="display: flex; gap: 15px; margin-bottom: 25px;">
+          <div style="flex: 1; border-left: 4px solid #007bff; padding: 15px; background: #f5f5f5; border-radius: 4px;">
+            <p style="color: #007bff; font-weight: 700; font-size: 0.75rem; margin-bottom: 5px;">MATERIAL UTILIZATION</p>
+            <p style="color: #666; font-size: 0.85rem;">Via Optimized Blank Nesting</p>
+          </div>
+          <div style="flex: 1; border-left: 4px solid #007bff; padding: 15px; background: #f5f5f5; border-radius: 4px;">
+            <p style="color: #007bff; font-weight: 700; font-size: 0.75rem; margin-bottom: 5px;">EFFICIENCY GAIN</p>
+            <p style="color: #666; font-size: 0.85rem;">Over Conventional Methods</p>
+          </div>
+        </div>
+        <div style="border-left: 4px solid #007bff; padding: 15px; background: #f9f9f9; border-radius: 4px;">
+          <p style="color: #666; font-size: 0.85rem; font-style: italic; line-height: 1.5;">
+            "We strategically place components in the steel strip to drastically reduce scrap, eliminate defects early, and optimize die design."
+          </p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <p style="color: #00bcd4; font-weight: 700; margin-bottom: 15px; font-size: 0.9rem;">SIMULATION OUTPUT</p>
+        <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">
+          Formability analysis showing strain distribution and potential thinning areas, allowing for design correction before tooling.
+        </p>
+        <div style="margin-top: 20px; width: 100%; height: 200px; background: linear-gradient(135deg, #00bcd4, #009688); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem;">
+          Simulation Visualization
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 6. Stamping Die Design Page -->
+<section id="stamping-die-design">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Stamping Die Design</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Why Us, Deliverables, and Business Impact</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Service Detail</div>
+    </div>
+
+    <!-- Row 1 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #007bff;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">👍</span> Why Customers Choose Us?
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">Simulation-Driven Workflow:</strong> Validated designs before metal cutting.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">Cross-Sector Expertise:</strong> Deep experience in Automotive & Industrial.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">High First-Time Quality:</strong> Significantly reduced design iterations.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">Rapid Turnaround:</strong> Fast track design and feasibility studies.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #6c5ce7;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📋</span> Key Deliverables
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>Full Stamping Die Package (3D CAD + 2D Detailing)</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>Simulation, Feasibility Reports & Tonnage Plans</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>Blank Development & Strip Layout Optimization</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>Full Documentation & Digital Toolbox</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #00c9a7;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">💎</span> Our Value Proposition
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c9a7; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00c9a7;">Reduce Tool Tryout Time:</strong> Eliminate trial-and-error.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c9a7; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00c9a7;">Improve Part Quality:</strong> Defect-free production parts.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c9a7; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00c9a7;">Accelerate Time-to-Production:</strong> Faster market entry.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c9a7; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00c9a7;">Lower Tooling Cost:</strong> Optimized material usage.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #ffb74d;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📊</span> Business Impact
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ffb74d; font-size: 1.1rem;">▸</span>
+            <div><strong style="color: #ffb74d;">Fast Launches:</strong> Meet aggressive launch schedules.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ffb74d; font-size: 1.1rem;">▸</span>
+            <div><strong style="color: #ffb74d;">Low Scrap Rates:</strong> Maximize material efficiency.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ffb74d; font-size: 1.1rem;">▸</span>
+            <div><strong style="color: #ffb74d;">High Reliability:</strong> Stable, repeatable processes.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ffb74d; font-size: 1.1rem;">▸</span>
+            <div><strong style="color: #ffb74d;">Better Cost Control:</strong> Predictable manufacturing costs.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-note" style="margin-top: 24px;">Alliance Engineering Service Solutions | 2025</div>
+  </div>
+</section>
+
+<!-- 7. Formability Simulation - Process Flow -->
+<section id="formability">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Formability Simulation</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Why Us, Deliverables, and Business Impact</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Process Flow</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; margin-bottom: 30px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #007bff;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">👍</span> Why Customers Choose Us?
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">Simulation-Driven Workflow:</strong> Validated designs before metal cutting.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">Cross-Sector Expertise:</strong> Deep experience in Automotive & Industrial.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">High First-Time Quality:</strong> Significantly reduced design iterations.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">Rapid Turnaround:</strong> Fast track design and feasibility studies.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #6c5ce7;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📦</span> Key Deliverables
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">■</span>
+            <div><strong style="color: #007bff;">Full Stamping Die Package</strong> (3D CAD + 2D Detailing)</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">■</span>
+            <div><strong style="color: #007bff;">Simulation, Feasibility Reports</strong> & Tonnage Plans</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">■</span>
+            <div><strong style="color: #007bff;">Blank Development & Strip Layout</strong> Optimization</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">■</span>
+            <div><strong style="color: #007bff;">Full Documentation & Digital Toolbook</strong></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #00bcd4;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">💎</span> Our Value Proposition
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">↓</span>
+            <div><strong style="color: #00bcd4;">Reduce Tool Tryout Time:</strong> Eliminate trial-and-error.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">↑</span>
+            <div><strong style="color: #00bcd4;">Improve Part Quality:</strong> Defect-free production parts.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">»</span>
+            <div><strong style="color: #00bcd4;">Accelerate Time-to-Production:</strong> Faster market entry.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">↙</span>
+            <div><strong style="color: #00bcd4;">Lower Tooling Cost:</strong> Optimized material usage.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #ff9800;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📈</span> Business Impact
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Faster Launches:</strong> Meet aggressive launch schedules.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Low Scrap Rates:</strong> Maximize material efficiency.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">High Reliability:</strong> Stable, repeatable processes.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Better Cost Control:</strong> Predictable manufacturing costs.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 8. Mold Design & Simulation - Deep Dive -->
+<section id="mold">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Mold Design & Simulation</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Mold Flow Analysis: Perfect Parts Through Scientific Molding</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Deep Dive</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 30px;">
+        <h3 style="font-size: 1.3rem; color: black; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.8rem;">🔍</span> Mold Flow Analysis
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 15px 0; color: #333; line-height: 1.5;">
+            <span style="color: #007bff; font-weight: bold;">▸</span> <strong style="color: #333;">Process Prediction:</strong> Scientifically predicts how molten plastic fills, packs, cools, and solidifies within the injection mold cavity.
+          </li>
+          <li style="margin: 15px 0; color: #333; line-height: 1.5;">
+            <span style="color: #007bff; font-weight: bold;">▸</span> <strong style="color: #333;">Defect Prevention:</strong> Identifies potential issues like air traps, weld lines, sink marks, and short shots before steel is cut.
+          </li>
+          <li style="margin: 15px 0; color: #333; line-height: 1.5;">
+            <span style="color: #007bff; font-weight: bold;">▸</span> <strong style="color: #333;">Optimization:</strong> Determines optimal gate locations, runner systems, and cooling channel layouts for cycle time reduction.
+          </li>
+        </ul>
+
+        <h3 style="font-size: 1.3rem; color: black; margin: 30px 0 20px 0; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.8rem;">📈</span> Simulation Benefits
+        </h3>
+        <div style="display: flex; gap: 15px; margin-bottom: 25px;">
+          <div style="flex: 1; border-left: 4px solid #007bff; padding: 15px; background: #f5f5f5; border-radius: 4px;">
+            <p style="color: #007bff; font-weight: 700; font-size: 0.85rem; margin-bottom: 5px;">Reduced</p>
+            <p style="color: #333; font-weight: 600; font-size: 0.9rem;">DEVELOPMENT TIME</p>
+            <p style="color: #666; font-size: 0.8rem; margin-top: 5px;">Fewer Physical Iterations</p>
+          </div>
+          <div style="flex: 1; border-left: 4px solid #007bff; padding: 15px; background: #f5f5f5; border-radius: 4px;">
+            <p style="color: #007bff; font-weight: 700; font-size: 0.85rem; margin-bottom: 5px;">Improved</p>
+            <p style="color: #333; font-weight: 600; font-size: 0.9rem;">PART QUALITY</p>
+            <p style="color: #666; font-size: 0.8rem; margin-top: 5px;">Minimizes Warpage & Defects</p>
+          </div>
+        </div>
+        <div style="border-left: 4px solid #007bff; padding: 15px; background: #f9f9f9; border-radius: 4px;">
+          <p style="color: #666; font-size: 0.85rem; font-style: italic; line-height: 1.5;">
+            "We address critical issues like warpage, gate locations, and cooling efficiency early in the design phase to ensure first-shot success."
+          </p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <p style="color: #00bcd4; font-weight: 700; margin-bottom: 15px; font-size: 0.9rem;">FLOW ANALYSIS</p>
+        <div style="width: 100%; height: 280px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #64b5f6 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; margin-bottom: 15px; position: relative; overflow: hidden;">
+          <div style="text-align: center; font-size: 3rem;">🎨</div>
+        </div>
+        <div style="background: rgba(0,0,0,0.7); color: white; padding: 12px; border-radius: 4px; font-size: 0.8rem; line-height: 1.4;">
+          <p style="font-weight: 600; margin-bottom: 5px;">FLOW ANALYSIS</p>
+          <p>Advanced flow simulation visualizing fill time and pressure distribution to optimize gate placement and prevent filling defects.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 9. Plastic Injection Mold Design - Service Overview -->
+<section id="injection">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Plastic Injection Mold Design</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Service Overview, Deliverables, and Business Impact</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Service Detail</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; margin-bottom: 30px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #007bff;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">💡</span> What We Do
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">End-to-End Design:</strong> Complete solutions from prototype to production-ready tools.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">Diverse Expertise:</strong> Multi-cavity, hot-runner, two-shot, insert, and precision molds.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">Industry Focus:</strong> Tailored designs for automotive, appliance, and industrial sectors.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #007bff; font-size: 1.2rem; line-height: 1;">●</span>
+            <div><strong style="color: #007bff;">Optimization:</strong> Designs focused on consistent quality and faster cycle times.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #6c5ce7;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📦</span> Key Deliverables
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">■</span>
+            <div>Complete 3D Mold Design & Detailed 2D Machining Drawings</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">≡</span>
+            <div>Bill of Materials (BOM) & Steel Specifications</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">📊</span>
+            <div>Optimized Cooling & Ejection System Layouts</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">■</span>
+            <div>Mold Flow Simulation Reports & Documentation Package</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #00bcd4;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">💎</span> Our Value Proposition
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00bcd4;">Reduce Tool Tryout Time:</strong> Minimal adjustments required.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00bcd4;">Improve First-Shot Quality:</strong> Validated designs ensure accuracy.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00bcd4;">Faster Time-to-Production:</strong> Accelerated development cycles.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #00bcd4;">Lower Manufacturing Costs:</strong> Optimized for efficiency.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 25px; border-top: 4px solid #ff9800;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📈</span> Business Impact
+        </h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Reduce Mold Rework:</strong> Eliminate costly tooling corrections.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Improve Consistency:</strong> Reliable surface quality & dimensions.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Increase Throughput:</strong> Higher production volumes.</div>
+          </li>
+          <li style="margin: 12px 0; color: #333; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Lower Maintenance Cost:</strong> Robust designs extend tool life.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 10. NEW PAGE: Mold Flow Simulation Process - Workflow -->
+<section id="mold-flow">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Mold Flow Simulation Process</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Comprehensive Workflow: From Feasibility to Defect-Free Production</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Workflow</div>
+    </div>
+
+    <div style="background: white; border-radius: 12px; padding: 40px 30px; margin-top: 40px;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 30px;">
+        <!-- Step 1 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #4a90e2, #357abd); display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #4a90e2; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">1</div>
+              <span style="font-size: 3.5rem;">🔬</span>
+            </div>
+            <div style="height: 4px; background: linear-gradient(to right, #4a90e2, #00bcd4); width: 100%; margin: 0 -10px;"></div>
+          </div>
+          <h3 style="color: #1a1a1a; font-size: 1.25rem; margin: 22px 0 14px; font-weight: 700;">Simulation Strategy</h3>
+          <p style="color: #2c3e50; font-size: 0.95rem; line-height: 1.6; font-weight: 500;">
+            Deploy advanced FEM/FVM analysis to model injection molding. Conduct initial feasibility studies and evaluate part aesthetics.
+          </p>
+        </div>
+
+        <!-- Arrow 1 -->
+        <div style="display: flex; align-items: center; margin-top: 60px;">
+          <span style="color: #4a90e2; font-size: 2.5rem; font-weight: bold;">›</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #00bcd4, #0097a7); display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #00bcd4; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">2</div>
+              <span style="font-size: 3.5rem;">⚙️</span>
+            </div>
+            <div style="height: 4px; background: linear-gradient(to right, #00bcd4, #6c5ce7); width: 100%; margin: 0 -10px;"></div>
+          </div>
+          <h3 style="color: #1a1a1a; font-size: 1.25rem; margin: 22px 0 14px; font-weight: 700;">Mold Set Up</h3>
+          <p style="color: #2c3e50; font-size: 0.95rem; line-height: 1.6; font-weight: 500;">
+            Clean CAD geometry, define mesh parameters, and design optimal gate locations and runner sizes for balanced filling.
+          </p>
+        </div>
+
+        <!-- Arrow 2 -->
+        <div style="display: flex; align-items: center; margin-top: 60px;">
+          <span style="color: #00bcd4; font-size: 2.5rem; font-weight: bold;">›</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #6c5ce7, #5b4bc4); display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #6c5ce7; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">3</div>
+              <span style="font-size: 3.5rem;">⚡</span>
+            </div>
+            <div style="height: 4px; background: linear-gradient(to right, #6c5ce7, #00c853); width: 100%; margin: 0 -10px;"></div>
+          </div>
+          <h3 style="color: #1a1a1a; font-size: 1.25rem; margin: 22px 0 14px; font-weight: 700;">Process Improvement</h3>
+          <p style="color: #2c3e50; font-size: 0.95rem; line-height: 1.6; font-weight: 500;">
+            Optimize cooling channel design and gate positioning. Predict and compensate for warpage to ensure dimensional stability.
+          </p>
+        </div>
+
+        <!-- Arrow 3 -->
+        <div style="display: flex; align-items: center; margin-top: 60px;">
+          <span style="color: #6c5ce7; font-size: 2.5rem; font-weight: bold;">›</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #00c853, #00a844); display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #00c853; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">4</div>
+              <span style="font-size: 3.5rem;">📊</span>
+            </div>
+            <div style="height: 4px; background: #00c853; width: 100%;"></div>
+          </div>
+          <h3 style="color: #1a1a1a; font-size: 1.25rem; margin: 22px 0 14px; font-weight: 700;">Simulation Results</h3>
+          <p style="color: #2c3e50; font-size: 0.95rem; line-height: 1.6; font-weight: 500;">
+            Generate actionable visual reports guiding design iterations. Ensure final product dimensional accuracy and superior surface finish.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">Alliance Engineering Service Solutions | 2026</div>
+  </div>
+</section>
+
+<!-- 11. NEW PAGE: Die Casting Design & Simulation -->
+<section id="die-casting">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Die Casting Design & Simulation</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Metal Flow Analysis for Perfect Parts</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Deep Dive</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: start; margin-top: 24px;">
+      <!-- Left: Content -->
+      <div>
+        <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #ff5252;">
+          <h3 style="font-size: 1.2rem; color: black; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="color: #ff5252; font-size: 1.4rem;">⟫</span> Metal Flow & Solidification
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: flex; gap: 10px; margin: 12px 0; color: #333; font-size: 0.92rem;">
+              <span style="color: #ff5252; font-size: 1.2rem;">›</span>
+              <div><strong style="color: #777;">Comprehensive Simulation:</strong> Advanced modeling of molten metal flow and solidification across various casting processes (HPDC, GDC, LPDC).</div>
+            </li>
+            <li style="display: flex; gap: 10px; margin: 12px 0; color: #333; font-size: 0.92rem;">
+              <span style="color: #ff5252; font-size: 1.2rem;">›</span>
+              <div><strong style="color: #777;">Early Defect Detection:</strong> Predicts manufacturing issues like porosity, cold shuts, and turbulence before expensive tooling is cut.</div>
+            </li>
+            <li style="display: flex; gap: 10px; margin: 12px 0; color: #333; font-size: 0.92rem;">
+              <span style="color: #ff5252; font-size: 1.2rem;">›</span>
+              <div><strong style="color: #777;">Process Optimization:</strong> Refines casting parameters including shot curves, cooling channels, and cycle times for maximum efficiency.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background: #ffe8ee; color: #d32f2f; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">🏁</div>
+            <div class="card-label" style="font-size: 1.2rem;">Strategic Benefits</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px;">
+            <div style="background: white; color: black; border-radius: 8px; padding: 18px; border-top: 4px solid #e57373;">
+              <div style="color: #d32f2f; font-weight: 700; margin-bottom: 6px;">Scrap Reduction</div>
+              <div style="color: #c62828; font-size: 0.85rem; font-weight: 700;">MINIMIZE DEFECTS</div>
+              <p style="color: #e57373; font-size: 0.85rem; margin-top: 8px;">Detect porosity & shrinkage early</p>
+            </div>
+            <div style="background: white; color: black; border-radius: 8px; padding: 18px; border-top: 4px solid #ff8a65;">
+              <div style="color: #e64a19; font-weight: 700; margin-bottom: 6px;">Cost Savings</div>
+              <div style="color: #c62828; font-size: 0.85rem; font-weight: 700;">AVOID REWORK</div>
+              <p style="color: #e57373; font-size: 0.85rem; margin-top: 8px;">Optimize die life & cycle time</p>
+            </div>
+          </div>
+
+          <p style="margin: 18px 8px 0; color: #777; font-style: italic;">"Our simulation-driven approach ensures dimensionally stable castings and significantly extends die service life."</p>
+          <div class="footer-note" style="margin-top: 12px;">Alliance Engineering Service Solutions | 2025</div>
+        </div>
+      </div>
+
+      <!-- Right: Visual -->
+      <div style="background: #fafafa; border-radius: 8px; position: relative; min-height: 380px; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 88%; height: 260px; background: linear-gradient(90deg, #ffd54f, #ff8a65); opacity: 0.25; border-radius: 6px;"></div>
+        <div style="position: absolute; bottom: 16px; left: 16px; background: #1f2d3d; color: white; padding: 10px 14px; border-radius: 8px;">
+          <div style="font-weight: 700; letter-spacing: .02em;">DIE CASTING SIMULATION</div>
+          <div style="font-size: .85rem; opacity: .85;">Thermal analysis visualization showing molten metal temperature distribution during the filling phase to identify potential hot spots.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- 12. NEW PAGE: Die Casting Design -->
+<section id="die-casting-design">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Die Casting Design</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Services for HPDC, GDC, and LPDC Systems</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Service Detail</div>
+    </div>
+
+    <!-- Row 1 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #007bff;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">🧰</span> What We Do
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">✶</span>
+            <div><strong style="color: #007bff;">End-to-End Design:</strong> Production-ready tools for high-quality, stable castings.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">✶</span>
+            <div><strong style="color: #007bff;">Defect Reduction:</strong> Designs that ensure reduced defects and faster tooling launch.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">✶</span>
+            <div><strong style="color: #007bff;">Process Coverage:</strong> Expertise in HPDC, GDC, LPDC, and Vacuum-assisted systems.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">✶</span>
+            <div><strong style="color: #007bff;">Sectors Served:</strong> Automotive, EV, Aerospace, and Industrial sectors.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #6c5ce7;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📦</span> Key Deliverables
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">•</span>
+            <div>Final 3D Die Design (Core, Cavity, Slider, Ejector, Cooling)</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">•</span>
+            <div>Complete 2D Machining & Assembly Drawings</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">•</span>
+            <div>Gating, Runner, Overflow Layouts & Flow Simulation Reports</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">•</span>
+            <div>Shot Curve, Thermal Optimization & Manufacturing Docs</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #00bcd4;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">🛡️</span> Our Value Proposition
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #00bcd4;">Reduce Die Tryout Time:</strong> Minimize physical iterations.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #00bcd4;">Minimize Casting Defects:</strong> Ensure internal integrity.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #00bcd4;">Optimize Cost & Weight:</strong> Material efficiency focus.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #00bcd4;">Faster Time-to-Production:</strong> Accelerate market entry.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #ff9800;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📈</span> Business Impact
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Lower Scrap Rate:</strong> Reduced waste improves margins.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Dimensional Stability:</strong> Consistent part geometry.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Longer Die Life:</strong> Optimized thermal management.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Higher Productivity:</strong> Faster cycle times & throughput.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. NEW PAGE: Process Simulation Video -->
+<section id="process-simulation-video">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Die Casting Simulation</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Video Demonstration: Visualizing the Invisible Process</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Video Demo</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: start; margin-top: 30px;">
+      <!-- Left: Video Preview -->
+      <div style="background: #f8fafc; border-radius: 12px; padding: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+        <div style="position: relative; background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%); border-radius: 10px; overflow: hidden;">
+          <!-- Video Content Area -->
+          <div style="height: 360px; display: flex; align-items: center; justify-content: center; position: relative;">
+            <!-- Central Play Button -->
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.2); cursor: pointer;">
+              <span style="color: #4a90e2; font-size: 2rem; margin-left: 4px;">▶</span>
+            </div>
+          </div>
+          
+          <!-- Simulation Preview Badge -->
+          <div style="position: absolute; top: 16px; right: 16px; background: #dc2626; color: white; padding: 8px 14px; font-weight: 700; border-radius: 6px; font-size: 0.75rem; letter-spacing: 0.02em;">SIMULATION PREVIEW</div>
+          
+          <!-- Video Controls Bar -->
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 48px; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 16px; color: white;">
+            <div style="display: flex; align-items: center; gap: 8px; flex: 1;">
+              <span style="font-size: 0.85rem; font-family: monospace;">00:14</span>
+              <div style="flex: 1; height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; position: relative; max-width: 420px;">
+                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 18%; background: #dc2626; border-radius: 2px;"></div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; font-size: 0.85rem;">
+              <span style="font-family: monospace;">02:38</span>
+              <span>⏵</span>
+              <span>⚙</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Process Details -->
+      <div>
+        <div style="color: #94a3b8; font-weight: 700; letter-spacing: 0.05em; font-size: 0.8rem; margin-bottom: 8px;">PROCESS VISUALIZATION</div>
+        <h2 style="color: white; font-size: 1.75rem; margin-bottom: 24px; font-weight: 800; line-height: 1.3;">Analyze Flow Dynamics &<br>Thermal Behavior</h2>
+
+        <div style="display: grid; gap: 20px;">
+          <!-- Feature 1 -->
+          <div style="display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: start;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #dbeafe, #bfdbfe); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">👁️</div>
+            <div>
+              <h3 style="font-weight: 700; color: white; margin-bottom: 6px; font-size: 1.05rem;">See the Unseen</h3>
+              <p style="color: #64748b; font-size: 0.92rem; line-height: 1.5; margin: 0;">Visualize molten metal filling patterns inside the die to identify turbulence and air entrapment zones.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div style="display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: start;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #e0e7ff, #c7d2fe); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🌡️</div>
+            <div>
+              <h3 style="font-weight: 700; color: white; margin-bottom: 6px; font-size: 1.05rem;">Thermal Mapping</h3>
+              <p style="color: #64748b; font-size: 0.92rem; line-height: 1.5; margin: 0;">Monitor temperature distribution during solidification to predict shrinkage porosity and hot spots.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div style="display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: start;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #dbeafe, #bfdbfe); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">⚖️</div>
+            <div>
+              <h3 style="font-weight: 700; color: white; margin-bottom: 6px; font-size: 1.05rem;">Optimization Comparison</h3>
+              <p style="color: #64748b; font-size: 0.92rem; line-height: 1.5; margin: 0;">Side-by-side comparison of baseline vs. optimized parameters to validate tooling improvements before cutting steel.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-note" style="margin-top: 32px;">Alliance Engineering Service Solutions | 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. NEW PAGE: Die Casting Simulation Workflow -->
+<section id="die-casting-workflow">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Die Casting Simulation</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Comprehensive Workflow: Strategy, Setup, Improvement & Results</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Workflow</div>
+    </div>
+
+    <div style="background: white; border-radius: 12px; padding: 50px 30px; margin-top: 40px;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
+        <!-- Step 1 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid #4a90e2; background: white; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.15);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #4a90e2; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">1</div>
+              <span style="font-size: 3.2rem; color: #4a90e2;">📋</span>
+            </div>
+            <div style="height: 4px; background: #4a90e2; width: 100%; margin: 0 -10px;"></div>
+          </div>
+          <h3 style="color: #2c3e50; font-size: 1.2rem; margin: 22px 0 14px; font-weight: 700;">Simulation Strategy</h3>
+          <p style="color: #64748b; font-size: 0.92rem; line-height: 1.6;">
+            Define the analysis sequence, level of model detail, and iteration plan to efficiently capture critical physics and accurately predict defects.
+          </p>
+        </div>
+
+        <!-- Arrow 1 -->
+        <div style="display: flex; align-items: center; margin-top: 60px;">
+          <span style="color: #cbd5e1; font-size: 2.5rem;">›</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid #00bcd4; background: white; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(0, 188, 212, 0.15);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #00bcd4; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">2</div>
+              <span style="font-size: 3.2rem; color: #00bcd4;">⚙️</span>
+            </div>
+            <div style="height: 4px; background: #00bcd4; width: 100%; margin: 0 -10px;"></div>
+          </div>
+          <h3 style="color: #2c3e50; font-size: 1.2rem; margin: 22px 0 14px; font-weight: 700;">Die Set Up</h3>
+          <p style="color: #64748b; font-size: 0.92rem; line-height: 1.6;">
+            Load component and die models, assign materials, and apply thermal systems, cooling channels, and boundary conditions for accurate simulation.
+          </p>
+        </div>
+
+        <!-- Arrow 2 -->
+        <div style="display: flex; align-items: center; margin-top: 60px;">
+          <span style="color: #cbd5e1; font-size: 2.5rem;">›</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid #6c5ce7; background: white; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(108, 92, 231, 0.15);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #6c5ce7; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">3</div>
+              <span style="font-size: 3.2rem; color: #6c5ce7;">⚙️</span>
+            </div>
+            <div style="height: 4px; background: #6c5ce7; width: 100%; margin: 0 -10px;"></div>
+          </div>
+          <h3 style="color: #2c3e50; font-size: 1.2rem; margin: 22px 0 14px; font-weight: 700;">Process Improvement</h3>
+          <p style="color: #64748b; font-size: 0.92rem; line-height: 1.6;">
+            Optimize parameters to balance cavity filling, control solidification, and manage thermal performance to reduce scrap and extend die life.
+          </p>
+        </div>
+
+        <!-- Arrow 3 -->
+        <div style="display: flex; align-items: center; margin-top: 60px;">
+          <span style="color: #cbd5e1; font-size: 2.5rem;">›</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div style="flex: 1; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid #00c853; background: white; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.15);">
+              <div style="position: absolute; top: 8px; right: 15px; background: #00c853; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; border: 3px solid white;">4</div>
+              <span style="font-size: 3.2rem; color: #00c853;">📊</span>
+            </div>
+            <div style="height: 4px; background: #00c853; width: 100%;"></div>
+          </div>
+          <h3 style="color: #2c3e50; font-size: 1.2rem; margin: 22px 0 14px; font-weight: 700;">Simulation Results</h3>
+          <p style="color: #64748b; font-size: 0.92rem; line-height: 1.6;">
+            Analyze Flow, Thermal, Solidification, Defect Prediction, and Mechanical outputs to validate designs and optimize process settings.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-note" style="margin-top: 40px;">Alliance Engineering Service Solutions | 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. NEW PAGE: Structural & CFD Analysis -->
+<section id="structural-cfd">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Structural & CFD Analysis</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Overview: Structural Integrity and Fluid Dynamics Optimization</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Analysis Deep Dive</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+      <!-- Left: Structural Analysis (FEA) -->
+      <div style="background: white; border-radius: 12px; overflow: hidden;">
+        <!-- Visual placeholder -->
+        <div style="height: 240px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 85%; height: 85%; background: rgba(255,255,255,0.1); border-radius: 8px; backdrop-filter: blur(4px);"></div>
+        </div>
+        
+        <!-- Content -->
+        <div style="padding: 28px;">
+          <div style="color: #6c5ce7; font-weight: 700; letter-spacing: 0.05em; font-size: 0.8rem; margin-bottom: 12px;">STRUCTURAL ANALYSIS (FEA)</div>
+          <h2 style="color: #1e293b; font-size: 1.5rem; margin-bottom: 16px; font-weight: 800;">Ensuring Safety & Reliability</h2>
+          <p style="color: #64748b; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
+            Uses advanced CAE/FEA simulations to evaluate how components and structures respond to real-world loads, stress, and vibrations before physical prototypes are built.
+          </p>
+          
+          <div style="display: grid; gap: 12px;">
+            <div style="display: flex; gap: 10px; align-items: start;">
+              <span style="color: #6c5ce7; font-size: 1.2rem;">●</span>
+              <div style="color: #475569; font-size: 0.9rem;"><strong style="color: #1e293b;">Capabilities:</strong> Static, Dynamic, Thermal & Fatigue Analysis.</div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: start;">
+              <span style="color: #6c5ce7; font-size: 1.2rem;">●</span>
+              <div style="color: #475569; font-size: 0.9rem;"><strong style="color: #1e293b;">Impact:</strong> Enhances product durability and reduces operational risk.</div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: start;">
+              <span style="color: #6c5ce7; font-size: 1.2rem;">●</span>
+              <div style="color: #475569; font-size: 0.9rem;"><strong style="color: #1e293b;">Outcome:</strong> Optimized designs for weight and strength.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Fluid Dynamics (CFD) -->
+      <div style="background: white; border-radius: 12px; overflow: hidden;">
+        <!-- Visual placeholder -->
+        <div style="height: 240px; background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%); position: relative; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 85%; height: 85%; background: rgba(255,255,255,0.1); border-radius: 8px; backdrop-filter: blur(4px);"></div>
+        </div>
+        
+        <!-- Content -->
+        <div style="padding: 28px;">
+          <div style="color: #00bcd4; font-weight: 700; letter-spacing: 0.05em; font-size: 0.8rem; margin-bottom: 12px;">FLUID DYNAMICS (CFD)</div>
+          <h2 style="color: #1e293b; font-size: 1.5rem; margin-bottom: 16px; font-weight: 800;">Optimizing Flow & Thermal</h2>
+          <p style="color: #64748b; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
+            Predicts complex real-world fluid behavior (air, liquid) to optimize aerodynamics, thermal management, and mixing processes.
+          </p>
+          
+          <div style="display: grid; gap: 12px;">
+            <div style="display: flex; gap: 10px; align-items: start;">
+              <span style="color: #00bcd4; font-size: 1.2rem;">●</span>
+              <div style="color: #475569; font-size: 0.9rem;"><strong style="color: #1e293b;">Capabilities:</strong> Pressure, Velocity, Temperature & Turbulence analysis.</div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: start;">
+              <span style="color: #00bcd4; font-size: 1.2rem;">●</span>
+              <div style="color: #475569; font-size: 0.9rem;"><strong style="color: #1e293b;">Impact:</strong> Improves cooling efficiency and minimizes flow losses.</div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: start;">
+              <span style="color: #00bcd4; font-size: 1.2rem;">●</span>
+              <div style="color: #475569; font-size: 0.9rem;"><strong style="color: #1e293b;">Outcome:</strong> High-performance fluid and thermal systems.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16. NEW PAGE: Structural Analysis -->
+<section id="structural-analysis">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Structural Analysis</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">What We Do, Deliverables, and Business Impact</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">FEA & Simulation</div>
+    </div>
+
+    <!-- Row 1 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #007bff;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">🖥️</span> What We Do
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">Advanced CAE Validation:</strong> Evaluate components under real-world loads.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">Virtual Prototyping:</strong> Test performance before physical builds.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">Risk Mitigation:</strong> Identify failure points early in the design cycle.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #007bff;">Safety Assurance:</strong> Ensure machinery and systems are performance-optimized.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #6c5ce7;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📋</span> Key Deliverables
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">■</span>
+            <div>Static, Dynamic & Modal Analysis Reports</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">📊</span>
+            <div>Thermal & Thermo-Mechanical Reports</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">⚡</span>
+            <div>Fatigue & Durability Life Prediction</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">■</span>
+            <div>Design Recommendations & Verification</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #00bcd4;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">🎯</span> Our Value Proposition
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #00bcd4;">Finite Element Analysis (FEA):</strong> High-fidelity structural simulation.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #00bcd4;">Multi-Physics Integration:</strong> Coupled thermal-structural insights.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #00bcd4;">Design Optimization:</strong> Balance weight, cost, and strength.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00bcd4; font-size: 1.1rem;">●</span>
+            <div><strong style="color: #00bcd4;">Manufacturability:</strong> Validation for practical production.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #ff9800;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📈</span> Business Impact
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Reduce Costs:</strong> Minimize expensive physical testing.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Accelerate Time-to-Market:</strong> Faster design iterations.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Enhance Reliability:</strong> Robust, fail-safe products.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">◆</span>
+            <div><strong style="color: #ff9800;">Customer Confidence:</strong> Validated engineering solutions.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-note" style="margin-top: 24px;">Alliance Engineering Service Solutions | 2025</div>
+  </div>
+</section>
+
+<!-- 17. NEW PAGE: CFD Analysis -->
+<section id="cfd-analysis">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">CFD Analysis</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Optimization for Fluid Dynamics, Thermal Management & Aerodynamics</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Computational Fluid Dynamics</div>
+    </div>
+
+    <!-- Row 1 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #007bff;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">🧪</span> What We Do
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">›</span>
+            <div><strong style="color: #007bff;">Predict Fluid Behavior:</strong> Analyze real-world air and liquid flow patterns.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">›</span>
+            <div><strong style="color: #007bff;">Virtual Prototyping:</strong> Optimize performance before building physical models.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">›</span>
+            <div><strong style="color: #007bff;">Thermal Management:</strong> Simulate cooling efficiency and heat dissipation.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #007bff; font-size: 1.1rem;">›</span>
+            <div><strong style="color: #007bff;">Design Validation:</strong> Drive smarter decisions with engineering insights.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #6c5ce7;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📄</span> Deliverables
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>3D CFD Model Setup, Meshing & Physics Configuration</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>Pressure, Velocity & Temperature Contour Plots</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>Steady-State / Transient Simulation Results & Animations</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #6c5ce7; font-size: 1.1rem;">✓</span>
+            <div>Optimization Report with Quantified Benchmarks</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #00c853;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📊</span> Business Impact
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c853; font-size: 1.1rem;">➤</span>
+            <div><strong style="color: #00c853;">Improve Performance:</strong> Enhance aerodynamics and reduce drag.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c853; font-size: 1.1rem;">➤</span>
+            <div><strong style="color: #00c853;">Ensure Reliability:</strong> Optimize cooling efficiency and thermal stability.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c853; font-size: 1.1rem;">➤</span>
+            <div><strong style="color: #00c853;">Minimize Losses:</strong> Reduce flow restrictions in ducts and valves.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #00c853; font-size: 1.1rem;">➤</span>
+            <div><strong style="color: #00c853;">Accelerate Market Entry:</strong> Reduce testing cycles and costs.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background: white; color: black; border-radius: 8px; padding: 24px; border-top: 4px solid #ff9800;">
+        <h3 style="font-size: 1.1rem; color: black; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">⭐</span> Why It Matters
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Visualize the Invisible:</strong> See internal flow dynamics impossible to test physically.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Cost Reduction:</strong> Eliminate expensive physical trial-and-error loops.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Optimize Process:</strong> Improve mixing for chemical/industrial applications.</div>
+          </li>
+          <li style="display: flex; gap: 10px; margin: 10px 0; color: #333; font-size: 0.92rem;">
+            <span style="color: #ff9800; font-size: 1.1rem;">•</span>
+            <div><strong style="color: #ff9800;">Safety & Durability:</strong> Identify potential failure points early.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-note" style="margin-top: 24px;">Alliance Engineering Service Solutions | 2025</div>
+  </div>
+</section>
+
+<!-- 18. NEW PAGE: Why Choose Alliance Engineering -->
+<section id="why-alliance">
+  <div class="content-card">
+    <div class="card-header">
+      <div>
+        <div class="card-label" style="font-size: 1.8rem;">Why Choose Alliance Engineering</div>
+        <p style="color: #00bcd4; margin-top: 8px; font-size: 0.95rem;">Strategic Advantages & Business Impact</p>
+      </div>
+      <div class="alliance-brand" style="margin-top: 0;">Value Proposition</div>
+    </div>
+
+    <div style="color:#8aa0b6; font-weight:700; letter-spacing:.05em; font-size:.85rem; margin: 12px 0 18px;">OUR COMPETITIVE ADVANTAGE</div>
+
+    <!-- Advantage Tabs -->
+    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 20px;">
+      <div style="background:white; border-radius:12px; padding:16px 18px; border-top:4px solid #4a90e2;">
+        <div style="display:flex; align-items:center; gap:10px; font-weight:700; color:#1e293b; margin-bottom:6px;">
+          <span style="width:32px; height:32px; border-radius:8px; background:#e6f2ff; display:flex; align-items:center; justify-content:center; color:#357abd;">🔧</span>
+          Simulation-Driven
+        </div>
+        <div style="color:#64748b; font-size:.92rem;">High first-time quality with significantly reduced design iterations.</div>
+      </div>
+      <div style="background:white; border-radius:12px; padding:16px 18px; border-top:4px solid #6c5ce7;">
+        <div style="display:flex; align-items:center; gap:10px; font-weight:700; color:#1e293b; margin-bottom:6px;">
+          <span style="width:32px; height:32px; border-radius:8px; background:#efeaff; display:flex; align-items:center; justify-content:center; color:#6c5ce7;">👥</span>
+          Experienced Team
+        </div>
+        <div style="color:#64748b; font-size:.92rem;">Deep expertise across Automotive, Aerospace, and Industrial sectors.</div>
+      </div>
+      <div style="background:white; border-radius:12px; padding:16px 18px; border-top:4px solid #ff9800;">
+        <div style="display:flex; align-items:center; gap:10px; font-weight:700; color:#1e293b; margin-bottom:6px;">
+          <span style="width:32px; height:32px; border-radius:8px; background:#fff3e0; display:flex; align-items:center; justify-content:center; color:#ff9800;">⚡</span>
+          Rapid Turnaround
+        </div>
+        <div style="color:#64748b; font-size:.92rem;">Accelerated product development cycles to meet tight deadlines.</div>
+      </div>
+    </div>
+
+    <div style="color:#8aa0b6; font-weight:700; letter-spacing:.05em; font-size:.85rem; margin: 26px 0 18px;">DELIVERING QUANTIFIABLE BUSINESS RESULTS</div>
+
+    <!-- Results Cards -->
+    <div style="display:grid; grid-template-columns: repeat(4,1fr); gap: 20px;">
+      <!-- Time -->
+      <div style="background:white; border-radius:12px; padding:24px; border-top:4px solid #4a90e2;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <span style="width:40px; height:40px; border-radius:50%; background:#e6f2ff; display:flex; align-items:center; justify-content:center; color:#357abd;">⏱️</span>
+          <div style="font-weight:800; color:#1e293b;">Time</div>
+        </div>
+        <div style="display:grid; gap:12px;">
+          <div style="background:#eef6ff; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Faster</div>
+            <div style="color:#64748b; font-size:.86rem;">Launches</div>
+          </div>
+          <div style="background:#eef6ff; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Accelerate</div>
+            <div style="color:#64748b; font-size:.86rem;">Time-to-Market</div>
+          </div>
+          <div style="background:#eef6ff; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Reduced Tryout Loops</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quality -->
+      <div style="background:white; border-radius:12px; padding:24px; border-top:4px solid #6c5ce7;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <span style="width:40px; height:40px; border-radius:50%; background:#efeaff; display:flex; align-items:center; justify-content:center; color:#6c5ce7;">🏅</span>
+          <div style="font-weight:800; color:#1e293b;">Quality</div>
+        </div>
+        <div style="display:grid; gap:12px;">
+          <div style="background:#f2efff; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Low</div>
+            <div style="color:#64748b; font-size:.86rem;">Scrap Rates</div>
+          </div>
+          <div style="background:#f2efff; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">High</div>
+            <div style="color:#64748b; font-size:.86rem;">Reliability</div>
+          </div>
+          <div style="background:#f2efff; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Dimensional Stability</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost -->
+      <div style="background:white; border-radius:12px; padding:24px; border-top:4px solid #00c853;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <span style="width:40px; height:40px; border-radius:50%; background:#e9f9ef; display:flex; align-items:center; justify-content:center; color:#00a844;">💲</span>
+          <div style="font-weight:800; color:#1e293b;">Cost</div>
+        </div>
+        <div style="display:grid; gap:12px;">
+          <div style="background:#e9f9ef; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Lower</div>
+            <div style="color:#64748b; font-size:.86rem;">Tooling Costs</div>
+          </div>
+          <div style="background:#e9f9ef; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Reduce</div>
+            <div style="color:#64748b; font-size:.86rem;">Rework Expense</div>
+          </div>
+          <div style="background:#e9f9ef; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Better Cost Control</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Efficiency -->
+      <div style="background:white; border-radius:12px; padding:24px; border-top:4px solid #ffb74d;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <span style="width:40px; height:40px; border-radius:50%; background:#fff3e0; display:flex; align-items:center; justify-content:center; color:#ff9800;">⚙️</span>
+          <div style="font-weight:800; color:#1e293b;">Efficiency</div>
+        </div>
+        <div style="display:grid; gap:12px;">
+          <div style="background:#fff3e0; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Higher</div>
+            <div style="color:#64748b; font-size:.86rem;">Productivity</div>
+          </div>
+          <div style="background:#fff3e0; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Increase</div>
+            <div style="color:#64748b; font-size:.86rem;">Throughput</div>
+          </div>
+          <div style="background:#fff3e0; border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#1e293b;">Optimized Processes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note" style="margin-top: 24px;">Alliance Engineering Service Solutions | 2025</div>
+  </div>
+</section>
+
+<!-- Landing Page Section -->
+<section id="landing-page">
+  <div class="content-card">
+    <div style="position: absolute; top: 40px; right: 40px; background: rgba(0, 0, 0, 0.4); border-radius: 50%; width: 120px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border: 2px solid #5dade2; text-align: center; z-index: 5;">
+      <div style="font-size: 32px; color: #5dade2;">✓</div>
+      <div style="font-size: 0.8rem; color: #ecf0f1; font-weight: 600; letter-spacing: 1px;">TRUSTED<br>PARTNER</div>
+    </div>
+
+    <div style="text-align: center; position: relative; z-index: 2;">
+    <div style="margin-bottom: 30px; font-size: 48px; color: #5dade2;">⬚⬜⬚</div>
+    
+    <div style="font-size: 0.95rem; letter-spacing: 3px; color: #95a5a6; margin-bottom: 10px; font-weight: 600;">ALLIANCE ENGINEERING SERVICE SOLUTIONS</div>
+
+    <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Partner for Engineering Excellence</h1>
+
+    <p style="font-size: 1.1rem; color: #d5dbdb; margin-bottom: 30px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto;">
+      We provide complete, simulation-driven engineering solutions across critical industries, helping you reduce risk, accelerate production, and ensure product reliability.
+    </p>
+
+    <p style="font-size: 1.2rem; color: #5dade2; margin-bottom: 50px; font-weight: 500;">
+      Let's discuss how our advanced CAE and design services can accelerate your next project launch.
+    </p>
+
+    <div style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; align-items: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <div style="font-size: 28px; color: #5dade2;">✉</div>
+        <div style="font-size: 0.85rem; color: #95a5a6; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;">Email Us</div>
+        <a href="mailto:business@allianceengworks.com" style="font-size: 1.1rem; color: #2c3e50; font-weight: 600; text-decoration: none; transition: color 0.3s ease;">business@allianceengworks.com</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <div style="font-size: 28px; color: #5dade2;">☎</div>
+        <div style="font-size: 0.85rem; color: #95a5a6; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;">Call Us</div>
+        <a href="tel:+919916351168" style="font-size: 1.1rem; color: #2c3e50; font-weight: 600; text-decoration: none; transition: color 0.3s ease;">+91 9916351168</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <div style="font-size: 28px; color: #5dade2;">🌐</div>
+        <div style="font-size: 0.85rem; color: #95a5a6; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;">Visit Us</div>
+        <a href="https://www.alliance-eng.com" target="_blank" style="font-size: 1.1rem; color: #2c3e50; font-weight: 600; text-decoration: none; transition: color 0.3s ease;">www.alliance-eng.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 80);
+  });
+</script>
+
+<div style="position: fixed; bottom: 10px; left: 10px; color: white; font-size: 0.8rem; opacity: 0.7; z-index: 1000;">
+  Alliance Engineering Service Solutions | 2026
+</div>
+</body>
+</html>
