@@ -3,39 +3,39 @@
   <g>
     <!-- Main ladle bowl -->
     <path d="M 50 80 L 45 140 Q 45 150 55 150 L 135 150 Q 145 150 145 140 L 140 80 Z" 
-          fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+          fill="#222" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
     
     <!-- Ladle handle (curved) -->
     <path d="M 140 100 Q 160 80 165 50 Q 166 40 158 35" 
-          fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          fill="none" stroke="#222" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
     
     <!-- Pour spout -->
     <path d="M 145 130 Q 155 125 165 135 Q 168 140 165 145" 
-          fill="white" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+          fill="#222" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
   </g>
   
-  <!-- Molten metal being poured (arc) -->
+  <!-- Molten metal being poured (arc) - dark metallic -->
   <g opacity="0.95">
     <!-- Main pour stream -->
     <path d="M 160 140 Q 155 155 150 170" 
-          fill="none" stroke="white" stroke-width="12" stroke-linecap="round"/>
+          fill="none" stroke="#444" stroke-width="12" stroke-linecap="round"/>
     
     <!-- Secondary pour stream -->
     <path d="M 165 142 Q 162 160 158 175" 
-          fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+          fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
   </g>
   
   <!-- Metal droplets/splashes -->
   <g>
-    <circle cx="145" cy="175" r="4" fill="white"/>
-    <circle cx="155" cy="180" r="3" fill="white" opacity="0.8"/>
-    <circle cx="138" cy="185" r="3.5" fill="white" opacity="0.7"/>
+    <circle cx="145" cy="175" r="4" fill="#333"/>
+    <circle cx="155" cy="180" r="3" fill="#333" opacity="0.8"/>
+    <circle cx="138" cy="185" r="3.5" fill="#333" opacity="0.7"/>
   </g>
   
   <!-- Receiving container below -->
   <path d="M 80 165 L 70 185 Q 70 192 80 192 L 160 192 Q 170 192 170 185 L 160 165 Z" 
-        fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+        fill="none" stroke="#444" stroke-width="2.5" stroke-linejoin="round"/>
   
   <!-- Container bottom detail -->
-  <ellipse cx="120" cy="192" rx="45" ry="6" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+  <ellipse cx="120" cy="192" rx="45" ry="6" fill="none" stroke="#333" stroke-width="1.5" opacity="0.6"/>
 </svg>
