@@ -1,0 +1,71 @@
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Traffic Light -->
+  <g>
+    <!-- Light post -->
+    <rect x="20" y="50" width="6" height="80" fill="#333" stroke="#000" stroke-width="1"/>
+    <!-- Light housing -->
+    <rect x="12" y="40" width="22" height="90" fill="#1a1a1a" stroke="#000" stroke-width="2" rx="4"/>
+    <!-- Red light -->
+    <circle cx="23" cy="55" r="6" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+    <!-- Green light -->
+    <circle cx="23" cy="105" r="6" fill="#27ae60" stroke="#1e8449" stroke-width="1"/>
+  </g>
+  
+  <!-- Main machine body -->
+  <g>
+    <!-- Base/Platform -->
+    <rect x="40" y="180" width="260" height="30" fill="#000" stroke="#333" stroke-width="2" rx="2"/>
+    
+    <!-- Left support leg -->
+    <circle cx="70" cy="210" r="8" fill="#000" stroke="#333" stroke-width="1"/>
+    
+    <!-- Center support leg -->
+    <circle cx="150" cy="210" r="8" fill="#000" stroke="#333" stroke-width="1"/>
+    
+    <!-- Right support leg -->
+    <circle cx="230" cy="210" r="8" fill="#000" stroke="#333" stroke-width="1"/>
+    
+    <!-- Main housing (left) -->
+    <rect x="40" y="120" width="100" height="65" fill="#1a1a1a" stroke="#000" stroke-width="2" rx="3"/>
+    
+    <!-- Control panel area -->
+    <g>
+      <rect x="55" y="135" width="70" height="35" fill="#222" stroke="#444" stroke-width="1" rx="2"/>
+      <!-- Control elements -->
+      <rect x="62" y="142" width="12" height="12" fill="#333" stroke="#555" stroke-width="0.5" rx="1"/>
+      <rect x="78" y="142" width="12" height="12" fill="#333" stroke="#555" stroke-width="0.5" rx="1"/>
+      <rect x="62" y="158" width="28" height="8" fill="#444" stroke="#666" stroke-width="0.5" rx="1"/>
+    </g>
+    
+    <!-- Mold clamping unit (center) -->
+    <g>
+      <rect x="150" y="110" width="70" height="75" fill="#1a1a1a" stroke="#000" stroke-width="2" rx="2"/>
+      <!-- Mold plates -->
+      <rect x="158" y="120" width="15" height="55" fill="#333" stroke="#555" stroke-width="1" rx="1"/>
+      <rect x="178" y="120" width="15" height="55" fill="#333" stroke="#555" stroke-width="1" rx="1"/>
+      <line x1="175" y1="120" x2="175" y2="175" stroke="#555" stroke-width="1"/>
+    </g>
+    
+    <!-- Injection unit (right) -->
+    <g>
+      <!-- Barrel -->
+      <rect x="230" y="130" width="50" height="45" fill="#222" stroke="#000" stroke-width="2" rx="2"/>
+      
+      <!-- Hopper/Funnel -->
+      <polygon points="240,110 270,110 260,85 250,85" fill="#1a1a1a" stroke="#000" stroke-width="1.5"/>
+      
+      <!-- Screw chamber -->
+      <ellipse cx="255" cy="155" rx="12" ry="15" fill="#333" stroke="#555" stroke-width="1"/>
+      
+      <!-- Nozzle -->
+      <polygon points="280,150 295,145 295,160" fill="#444" stroke="#222" stroke-width="1"/>
+    </g>
+    
+    <!-- Connection lines -->
+    <line x1="220" y1="145" x2="230" y2="145" stroke="#666" stroke-width="2"/>
+  </g>
+  
+  <!-- Highlights for 3D effect -->
+  <rect x="40" y="120" width="100" height="3" fill="#333" opacity="0.5" rx="2"/>
+  <rect x="150" y="110" width="70" height="3" fill="#333" opacity="0.5" rx="2"/>
+</svg>
