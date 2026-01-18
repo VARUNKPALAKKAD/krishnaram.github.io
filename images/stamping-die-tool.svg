@@ -1,0 +1,51 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e5a96;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d3b7a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Top platform -->
+  <rect x="30" y="50" width="140" height="25" fill="url(#blueGrad)" stroke="#003d5c" stroke-width="1.5" rx="2"/>
+  
+  <!-- Top platform shadow -->
+  <ellipse cx="100" cy="75" rx="70" ry="8" fill="#003d5c" opacity="0.3"/>
+  
+  <!-- Left support column -->
+  <rect x="50" y="75" width="12" height="55" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  
+  <!-- Right support column -->
+  <rect x="138" y="75" width="12" height="55" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  
+  <!-- Bottom platform -->
+  <rect x="30" y="130" width="140" height="28" fill="url(#blueGrad)" stroke="#003d5c" stroke-width="1.5" rx="2"/>
+  
+  <!-- Bottom platform shadow -->
+  <ellipse cx="100" cy="158" rx="70" ry="8" fill="#003d5c" opacity="0.3"/>
+  
+  <!-- Upper cavity/tool (metallic) -->
+  <g>
+    <rect x="65" y="55" width="70" height="18" fill="#d4a574" stroke="#8b7355" stroke-width="1" rx="1"/>
+    <!-- Screw holes -->
+    <circle cx="75" cy="60" r="2.5" fill="#666"/>
+    <circle cx="125" cy="60" r="2.5" fill="#666"/>
+    <!-- Tool detail -->
+    <rect x="85" y="65" width="30" height="6" fill="#b8860b" stroke="#666" stroke-width="0.5" rx="1"/>
+  </g>
+  
+  <!-- Lower cavity/tool (metallic) -->
+  <g>
+    <rect x="65" y="118" width="70" height="10" fill="#d4a574" stroke="#8b7355" stroke-width="1" rx="1"/>
+    <!-- Screw holes -->
+    <circle cx="75" cy="122" r="2" fill="#666"/>
+    <circle cx="125" cy="122" r="2" fill="#666"/>
+  </g>
+  
+  <!-- Center connector detail -->
+  <rect x="95" y="78" width="10" height="40" fill="#999" stroke="#666" stroke-width="1"/>
+  
+  <!-- Highlights for 3D effect -->
+  <rect x="30" y="50" width="140" height="2" fill="white" opacity="0.3" rx="1"/>
+</svg>
