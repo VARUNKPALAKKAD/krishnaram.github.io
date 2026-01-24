@@ -53,18 +53,143 @@
       font-weight: 800;
       color: var(--accent);
     }
+    nav {
+      margin-right: 100px;
+    }
     nav ul {
       list-style: none;
       display: flex;
       gap: 40px;
+    }
+    nav li {
+      position: relative;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s;
+      display: block;
+      padding: 8px 0;
     }
     nav a:hover { color: var(--accent); }
+    
+    /* Dropdown indicator */
+    nav li > a.dropdown-toggle::after {
+      content: " ▼";
+      font-size: 0.7rem;
+      margin-left: 6px;
+      transition: transform 0.3s;
+    }
+    nav li:hover > a.dropdown-toggle::after {
+      transform: rotate(-180deg);
+    }
+    
+    /* Dropdown menu - Level 1 */
+    nav li ul {
+      display: none;
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(0, 31, 63, 0.98);
+      border-radius: 8px;
+      padding: 12px 0;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      list-style: none;
+      pointer-events: auto;
+    }
+    nav li:hover > ul,
+    nav li ul:hover {
+      display: flex;
+    }
+    nav li ul li {
+      padding: 0;
+      position: relative;
+    }
+    nav li ul li a {
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      display: block;
+    }
+    nav li ul li a:hover {
+      background: rgba(0, 123, 255, 0.2);
+      color: var(--accent);
+    }
+
+    /* Dropdown arrow indicator for items with submenus */
+    nav li ul li > a.dropdown-toggle::after {
+      content: " ▶";
+      font-size: 0.6rem;
+      margin-left: 8px;
+    }
+
+    /* Dropdown menu - Level 2 (nested) */
+    nav li ul li ul {
+      display: none;
+      position: absolute;
+      top: -12px;
+      left: calc(100% + 2px);
+      flex-direction: column;
+      gap: 0;
+      background: rgba(0, 31, 63, 0.98);
+      border-radius: 8px;
+      padding: 12px 0;
+      min-width: 160px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      list-style: none;
+      pointer-events: auto;
+    }
+    nav li ul li:hover > ul,
+    nav li ul li ul:hover {
+      display: flex;
+    }
+    nav li ul li ul li {
+      position: relative;
+    }
+    nav li ul li ul li a {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+
+    /* Dropdown menu - Level 3 (third level nested) */
+    nav li ul li ul li ul {
+      display: none;
+      position: absolute;
+      top: -12px;
+      left: calc(100% + 2px);
+      flex-direction: column;
+      gap: 0;
+      background: rgba(0, 31, 63, 0.98);
+      border-radius: 8px;
+      padding: 12px 0;
+      min-width: 150px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      z-index: 1001;
+      list-style: none;
+      pointer-events: auto;
+    }
+    nav li ul li ul li:hover > ul,
+    nav li ul li ul li ul:hover {
+      display: flex;
+    }
+    nav li ul li ul li ul li a {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
+    }
+    nav li ul li ul li:hover > ul {
+      display: flex;
+    }
+    nav li ul li ul li ul li a {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
 
     /* Global responsive media */
     img, video {
@@ -538,13 +663,49 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#industries">Industries</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#tooling">Tooling</a></li>
-        <li><a href="#stamping">Stamping</a></li>
-        <li><a href="#formability">Formability</a></li>
-        <li><a href="#mold">Mold</a></li>
-        <li><a href="#injection">Injection Mold</a></li>
-        <li><a href="#mold-flow">Mold Flow</a></li>
+        <li>
+          <a href="#services" class="dropdown-toggle">Services</a>
+          <ul>
+            <li>
+              <a href="#tooling" class="dropdown-toggle">Tooling</a>
+              <ul>
+                <li>
+                  <a href="#sheet-metal" class="dropdown-toggle">Sheet Metal</a>
+                  <ul>
+                    <li><a href="#sheet-metal-design">Design</a></li>
+                    <li><a href="#sheet-metal-simulation">Simulation</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#mold-design" class="dropdown-toggle">Mold</a>
+                  <ul>
+                    <li><a href="#mold-design-design">Design</a></li>
+                    <li><a href="#mold-design-simulation">Simulation</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#die-casting" class="dropdown-toggle">Die Casting</a>
+                  <ul>
+                    <li><a href="#die-casting-design">Design</a></li>
+                    <li><a href="#die-casting-simulation">Simulation</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#stamping" class="dropdown-toggle">Structural</a>
+              <ul>
+                <li><a href="#structural-analysis">Analysis</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#mold" class="dropdown-toggle">CFD</a>
+              <ul>
+                <li><a href="#cfd-analysis">Analysis</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
